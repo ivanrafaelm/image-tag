@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="imageGenerator">
+	<head>
+		<link rel="stylesheet" type="text/css" href="/scripts/bootstrap/css/bootstrap.min.css" />
+		<script type="text/javascript" src="/scripts/angular/angular.min.js"></script>
+		<script type="text/javascript" src="/scripts/app/app.js"></script>
+		<script type="text/javascript" src="/scripts/jquery/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="/scripts/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+	<body class="margin-left: 200px;">
+		<div class="page-header">
+			<h1>Price tag generation</h1>
+		</div>
+		<form name="imageForm" ng-controller="ImageController as ctrl">
+			<div class="row">
+        		<div class="col-md-6">
+					<table class="table">
+						<tbody>
+		              		<tr>
+								<td class="col-md-3">Item Id:</td>
+								<td><input type="text" size="60" name="item_id" ng-model="ctrl.item_id" maxlength="12" /></td>
+							</tr>
+							<tr>
+								<td class="col-md-3">Item Description:</td>
+								<td><input type="text" size="60" name="item_desc" ng-model="ctrl.item_description" /></td>
+							</tr>
+							<tr>
+								<td class="col-md-3">Old price:</td>
+								<td><input type="text" size="60" name="item_old_price" ng-model="ctrl.item_old_price" /></td>
+							</tr>
+							<tr>
+								<td class="col-md-3">Price:</td>
+								<td><input type="text" size="60" name="item_price" ng-model="ctrl.item_price" /></td>
+							</tr>
+							<tr>
+								<td class="col-md-3"><input type="button" name="preview" value="Preview" class="btn btn-lg btn-default" ng-click="ctrl.generateImagePreview()" /></td>
+								<td><input type="button" name="generate" value="Generate" class="btn btn-lg btn-default" /></td>
+								<td>&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-6">
+					<td><img ng-src="/image?itemId={{ctrl.url_item_id}}&itemDescription={{ctrl.url_item_description}}&itemOldPrice={{ctrl.url_item_old_price}}&itemPrice={{ctrl.url_item_price}}" /></p></td>
+				</div>
+			</div>
+		</form>
+	</body>
+</html>
