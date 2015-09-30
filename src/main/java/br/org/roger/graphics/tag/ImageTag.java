@@ -157,19 +157,11 @@ public class ImageTag {
 			}
 			
 			if (strikeOblique) {
-				System.out.println(bounds);
-				System.out.println(xCoordinate);
-				System.out.println(yCoordinate);
 				int x1 = xCoordinate;
 				int y1 = yCoordinate;
 				int x2 = xCoordinate + Double.valueOf(bounds.getWidth()).intValue();
 				int y2 = yCoordinate - Double.valueOf(bounds.getHeight()-0.3*bounds.getHeight()).intValue();
 
-				System.out.println(x1);
-				System.out.println(y1);
-				System.out.println(x2);
-				System.out.println(y2);
-				
 				g.drawLine(x1, y1, x2, y2);
 			}
 		}
